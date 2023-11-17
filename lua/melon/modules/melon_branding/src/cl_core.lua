@@ -1,7 +1,3 @@
----! no_gma
-
-if not melon.Debug() then return end
-
 local text = Color(77, 77, 77)
 local inactive = Color(94, 92, 230, 100)
 local active = Color(94, 92, 230)
@@ -17,7 +13,7 @@ local active = Color(94, 92, 230)
 ---- Always export gifs with 30ms between frames
 ----
 melon.branding = melon.branding or {}
-melon.branding.bits = {}
+melon.branding.bits = melon.branding.bits or {}
 melon.branding.play_state = {
     playing = true,
     frame = 0,
@@ -360,3 +356,10 @@ function melon.branding.AddBit(name, func, pre, frames)
     order = order + 1
 end
 
+
+concommand.Add("melon_branding", function(lp)
+    if not IsValid(lp) then return end
+    if not lp:IsSuperAdmin() then return end
+
+    melon.Debug(melon.branding.Open)
+end)

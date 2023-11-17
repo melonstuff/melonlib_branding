@@ -2,6 +2,8 @@
 
 --- this is meant to be pretty, not optimized
 --- do NOT copy from this istg
+local scale = .75
+local scaled_w, scaled_h = ScrW() * scale, ScrH() * scale
 melon.branding.AddBit("gradients", function(cx, cy, time, panel, st)
     local c = {
         {0,   HSVToColor((time * 360) + 0,   0.9, 0.9)},

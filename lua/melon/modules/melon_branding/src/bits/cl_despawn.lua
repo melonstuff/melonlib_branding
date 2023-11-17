@@ -90,4 +90,5 @@ melon.branding.AddBit("despawn", function(cx, cy, time, panel, st)
 
     return 512, 512
 end, nil, 60)
+
 melon.Debug(melon.branding.Open)
